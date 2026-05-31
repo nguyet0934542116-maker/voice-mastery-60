@@ -1,0 +1,359 @@
+:root {
+    --bg-color: #0b0c10;
+    --surface-color: rgba(31, 40, 51, 0.6);
+    --surface-border: rgba(102, 252, 241, 0.1);
+    --text-main: #c5c6c7;
+    --text-heading: #ffffff;
+    --accent-gold: #f1c40f;
+    --accent-neon: #66fcf1;
+    --accent-neon-glow: rgba(102, 252, 241, 0.4);
+    --btn-hover: #45a29e;
+    --danger: #ff4757;
+    --success: #2ed573;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    min-height: 100vh;
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(102, 252, 241, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 85% 30%, rgba(241, 196, 15, 0.05) 0%, transparent 50%);
+}
+
+h1, h2, h3, h4, .logo {
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-heading);
+}
+
+.app-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Header */
+.app-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInDown 0.8s ease;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--accent-gold);
+}
+
+.header-subtitle {
+    color: var(--accent-neon);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+    background: var(--surface-color);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--surface-border);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Progress Section */
+.progress-section h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+#progress-percentage {
+    color: var(--accent-neon);
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-neon), #2ecc71);
+    width: 0%;
+    transition: width 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 0 10px var(--accent-neon-glow);
+}
+
+/* Lesson Section */
+.day-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-btn {
+    background: transparent;
+    border: 1px solid var(--accent-neon);
+    color: var(--accent-neon);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:hover {
+    background: var(--accent-neon);
+    color: var(--bg-color);
+    box-shadow: 0 0 15px var(--accent-neon-glow);
+}
+
+.nav-btn:disabled {
+    border-color: #555;
+    color: #555;
+    cursor: not-allowed;
+    box-shadow: none;
+    background: transparent;
+}
+
+.lesson-title {
+    font-size: 1.8rem;
+    color: var(--accent-gold);
+    margin-bottom: 1.5rem;
+}
+
+.theory-box, .exercises-box, .task-box {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--accent-neon);
+}
+
+.theory-box h4, .exercises-box h4, .task-box h4 {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.exercises-box ul {
+    list-style-type: none;
+}
+
+.exercises-box li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.exercises-box li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-gold);
+    font-size: 1.2rem;
+}
+
+/* Buttons */
+.action-box {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn-primary {
+    background: var(--accent-neon);
+    color: #000;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+    background: #fff;
+    box-shadow: 0 0 20px var(--accent-neon-glow);
+    transform: translateY(-2px);
+}
+
+.btn-primary.completed {
+    background: var(--success);
+    color: white;
+    box-shadow: 0 0 20px rgba(46, 213, 115, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid #555;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+/* Recorder Section */
+.recorder-section {
+    text-align: center;
+}
+
+.recorder-desc {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    color: #aaa;
+}
+
+.recorder-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-record, .btn-stop {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-record {
+    background: var(--danger);
+    color: white;
+}
+
+.btn-record:hover {
+    background: #ff6b81;
+    box-shadow: 0 0 15px rgba(255, 71, 87, 0.5);
+}
+
+.btn-record.recording {
+    animation: pulse 1.5s infinite;
+}
+
+.record-icon {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.btn-stop {
+    background: #555;
+    color: white;
+}
+
+.btn-stop:not(:disabled):hover {
+    background: #777;
+}
+
+.btn-stop:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.audio-playback {
+    margin-top: 1.5rem;
+    display: none;
+}
+
+.audio-playback.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+audio {
+    width: 100%;
+    border-radius: 30px;
+    outline: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 71, 87, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .glass-card { padding: 1.5rem; }
+    .logo { font-size: 2rem; }
+    .lesson-title { font-size: 1.4rem; }
+    .btn-primary { width: 100%; }
+}
