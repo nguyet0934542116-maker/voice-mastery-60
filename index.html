@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Mastery 60 - Khai Phá Sức Mạnh Giọng Nói</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Ứng dụng huấn luyện giọng nói 60 ngày giúp bạn tăng nội lực, cộng hưởng và có được giọng nói uy lực theo phong cách của các diễn giả hàng đầu thế giới.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">VOICE <span>MASTERY</span> 60</div>
+            <div class="header-subtitle">Hành trình 60 ngày đánh thức quyền năng giọng nói</div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- Progress Section -->
+            <section class="progress-section glass-card">
+                <h2>Tiến độ của bạn</h2>
+                <div class="progress-info">
+                    <span id="completed-days-text">Ngày 0/60</span>
+                    <span id="progress-percentage">0%</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <button id="reset-btn" class="btn-secondary">Reset Tiến Độ</button>
+            </section>
+
+            <!-- Daily Lesson Section -->
+            <section class="lesson-section glass-card">
+                <div class="day-selector">
+                    <button id="prev-day-btn" class="nav-btn">&lt;</button>
+                    <h2 id="lesson-day-title">Ngày 1</h2>
+                    <button id="next-day-btn" class="nav-btn">&gt;</button>
+                </div>
+                
+                <h3 id="lesson-title" class="lesson-title">Đang tải...</h3>
+                
+                <div class="lesson-content">
+                    <div class="theory-box">
+                        <h4>💡 Lý Thuyết</h4>
+                        <p id="lesson-theory"></p>
+                    </div>
+
+                    <div class="exercises-box">
+                        <h4>🏋️ Thực Hành</h4>
+                        <ul id="lesson-exercises">
+                            <!-- Injected by JS -->
+                        </ul>
+                    </div>
+
+                    <div class="task-box">
+                        <h4>🎯 Nhiệm Vụ Hàng Ngày</h4>
+                        <p id="lesson-task"></p>
+                    </div>
+                </div>
+
+                <div class="action-box">
+                    <button id="mark-complete-btn" class="btn-primary">Hoàn Thành Ngày Này</button>
+                </div>
+            </section>
+
+            <!-- Audio Recorder Section -->
+            <section class="recorder-section glass-card">
+                <h2>🎙️ Phòng Thu Âm (Test Giọng)</h2>
+                <p class="recorder-desc">Nghe lại giọng của mình qua "air conduction" là cách tốt nhất để tự đánh giá độ vang và âm sắc.</p>
+                
+                <div class="recorder-controls">
+                    <button id="record-btn" class="btn-record"><span class="record-icon"></span> Bắt đầu Thu Âm</button>
+                    <button id="stop-btn" class="btn-stop" disabled>Dừng Thu</button>
+                </div>
+
+                <div class="audio-playback">
+                    <audio id="audio-player" controls></audio>
+                </div>
+
+                <div id="ai-scoring-section" class="ai-scoring-section" style="display: none; margin-top: 1.5rem; text-align: left; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 12px; border: 1px solid var(--accent-neon);">
+                    <h3 style="color: var(--accent-neon); margin-bottom: 0.5rem;">🤖 AI Chấm Điểm</h3>
+                    <div id="ai-loading" style="display: none;">Đang phân tích âm thanh...</div>
+                    <div id="ai-result" style="display: none;">
+                        <div style="font-size: 2rem; font-weight: 800; color: var(--accent-gold); margin-bottom: 0.5rem;" id="ai-score">0/100</div>
+                        <p id="ai-feedback" style="font-size: 0.95rem;"></p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Voice Mastery 60. Phương pháp từ các chuyên gia giọng nói hàng đầu thế giới.</p>
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
